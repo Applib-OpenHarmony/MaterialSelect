@@ -1,5 +1,7 @@
 # Material Select
 
+This library provides material design select functionality for Harmony OS implemented using extended typescript
+
 ## Download & Install
 
 Install using npm
