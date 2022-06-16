@@ -1,7 +1,5 @@
 # Material Select
 
-Material Select design in OpenHarmony.
-
 ## Download & Install
 
 Install using npm
@@ -112,10 +110,12 @@ Supports OpenHarmony API version 8
 
 ## Code Contribution
 
+If you find any problems during usage, you can submit an [Issue](https://github.com/Applib-OpenHarmony/Material_UI_Select/issues) to us. Of course, we also welcome you to send us [PR](https://github.com/Applib-OpenHarmony/Material_UI_Select/pulls).
+
 ## Open source License
 
 This project is based
-on [Apache License 2.0](https://github.com/Applib-OpenHarmony/Material_Ui_Checkbox/blob/main/LICENSE), please enjoy and
+on [Apache License 2.0](https://github.com/Applib-OpenHarmony/Material_UI_Select/blob/main/LICENSE), please enjoy and
 participate in open source freely.
 
 ## Open Issues
