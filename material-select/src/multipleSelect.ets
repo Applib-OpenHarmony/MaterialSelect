@@ -25,6 +25,16 @@ struct MultipleSelect {
 	}
 
 	aboutToAppear() {
+		if (this.model == null || this.model == undefined) {
+			this.model = new MultipleSelect.Model('')
+		}
+		if (this.menuModel == null || this.menuModel == undefined) {
+			this.menuModel = new MultipleSelect.MenuModel()
+		}
+		if (this.menu == null || this.menu == undefined) {
+			this.menu = []
+		}
+
 		let choices = []
 		for (let i = 0; i < this.menu.length; i++) {
 			let m = this.menu[i]
@@ -38,7 +48,7 @@ struct MultipleSelect {
 	@Builder
 	MenuItem(option: MultipleMenuOption, index: number) {
 		Row() {
-			Checkbox({ name: option.getValue(), group: "check" })
+			Checkbox({ name: option.getValue(), group: 'check' })
 				.select(option.getChecked())
 				.selectedColor(this.menuModel.getCheckColor())
 				.height(this.menuModel.getCheckBoxHeight())
@@ -51,6 +61,7 @@ struct MultipleSelect {
 			Text(option.getValue())
 				.fontSize(this.menuModel.getFontSize())
 				.fontWeight(FontWeight.Bold)
+				.fontColor(this.menuModel.getFontColor())
 				.flexGrow(1)
 				.maxLines(2)
 				.textOverflow({ overflow: TextOverflow.Ellipsis })

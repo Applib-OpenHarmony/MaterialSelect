@@ -34,7 +34,7 @@ class MenuOption {
 	}
 
 	getId(): number | string {
-		return this.value
+		return this.id
 	}
 }
 
@@ -76,7 +76,7 @@ class MultipleMenuOption {
 	}
 
 	getId(): number | string {
-		return this.value
+		return this.id
 	}
 
 	setChecked(checked: boolean): MultipleMenuOption {
@@ -130,7 +130,7 @@ class DotMenuOption {
 	}
 
 	getId(): number | string {
-		return this.value
+		return this.id
 	}
 
 	setIcon(icon: string | Resource) {

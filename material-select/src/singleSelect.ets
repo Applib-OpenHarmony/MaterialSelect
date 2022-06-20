@@ -10,6 +10,16 @@ struct MaterialSelect {
 	@State selected: number = -1
 
 	aboutToAppear() {
+		if (this.model == null || this.model == undefined) {
+			this.model = new MaterialSelect.Model('')
+		}
+		if (this.menuModel == null || this.menuModel == undefined) {
+			this.menuModel = new MaterialSelect.MenuModel()
+		}
+		if (this.menu == null || this.menu == undefined) {
+			this.menu = []
+		}
+
 		if (this.selected == -1) return
 		this.model.setPlaceholder(this.menu[this.selected].getValue())
 	}
@@ -20,6 +30,7 @@ struct MaterialSelect {
 			Text(option.getValue())
 				.fontSize(this.menuModel.getFontSize())
 				.fontWeight(FontWeight.Bold)
+				.fontColor(this.menuModel.getFontColor())
 				.maxLines(2)
 				.textOverflow({ overflow: TextOverflow.Ellipsis })
 		}
@@ -92,7 +103,7 @@ struct MaterialSelect {
 
 namespace MaterialSelect {
 	export class Model extends Properties {
-		private placeholder: string = "Select"
+		private placeholder: string = 'Select'
 		private fontSize: number | string = 18
 		private fontColor: string | Color = '#333F48'
 

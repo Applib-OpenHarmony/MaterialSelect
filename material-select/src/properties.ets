@@ -194,7 +194,6 @@ export class MenuProperties {
 	private width: number = 150
 	private fontSize: number | string = 14
 	private fontColor: string | Color = '#333F48'
-	private backgroundColor: string | Color = Color.White
 	private borderRadius: number | string = 0
 	private padding: Padding | Length = 10
 
@@ -264,19 +263,6 @@ export class MenuProperties {
 
 	getFontColor(): string | Color {
 		return this.fontColor
-	}
-
-	setBackgroundColor(backgroundColor: string | Color): MenuProperties {
-		if (backgroundColor == null || backgroundColor == undefined) {
-			this.backgroundColor = Color.White
-			return this
-		}
-		this.backgroundColor = backgroundColor
-		return this
-	}
-
-	getBackgroundColor(): string | Color {
-		return this.backgroundColor
 	}
 
 	setBorderRadius(borderRadius: number | string): MenuProperties {

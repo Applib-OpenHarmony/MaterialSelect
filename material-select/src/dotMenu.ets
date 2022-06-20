@@ -8,6 +8,18 @@ struct DotMenu {
 	@State model: DotMenu.Model = new DotMenu.Model()
 	@State menuModel: DotMenu.MenuModel = new DotMenu.MenuModel()
 
+	aboutToAppear() {
+		if (this.model == null || this.model == undefined) {
+			this.model = new DotMenu.Model()
+		}
+		if (this.menuModel == null || this.menuModel == undefined) {
+			this.menuModel = new DotMenu.MenuModel()
+		}
+		if (this.menu == null || this.menu == undefined) {
+			this.menu = []
+		}
+	}
+
 	@Builder
 	MenuItem(option: DotMenuOption) {
 		Row() {
@@ -53,6 +65,7 @@ struct DotMenu {
 			.height(this.model.getHeight())
 			.width(this.model.getWidth())
 			.objectFit(ImageFit.Contain)
+			.backgroundColor(this.model.getBackgroundColor())
 			.bindMenu(this.MenuBuilder())
 			.margin(this.model.getMargin())
 	}
