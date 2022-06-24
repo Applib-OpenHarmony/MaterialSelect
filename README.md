@@ -6,7 +6,7 @@ This library provides material design select functionality implemented using ext
 
 Install using npm
 
-```npm i material-select```
+```npm i @ohos/material-select```
 
 ## Usage Instructions
 
