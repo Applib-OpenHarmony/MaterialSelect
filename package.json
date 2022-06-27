@@ -1,5 +1,5 @@
 {
-  "name": "material_select",
+  "name": "@ohos/material-select",
   "version": "1.0.0",
   "ohos": {
     "org": "huawei",

@@ -21,7 +21,7 @@ struct MultipleSelect {
 	@State menu: MultipleMenuOption[] = []
 	private selected: MultipleMenuOption[] = []
 	onSelect: (itemList: MultipleMenuOption[]) => void
-	@State model: MultipleSelect.Model = new MultipleSelect.Model('')
+	@State model: MultipleSelect.Model = new MultipleSelect.Model('', '')
 	@State menuModel: MultipleSelect.MenuModel = new MultipleSelect.MenuModel()
 
 	private updateMenu() {
@@ -41,7 +41,7 @@ struct MultipleSelect {
 
 	aboutToAppear() {
 		if (this.model == null || this.model == undefined) {
-			this.model = new MultipleSelect.Model('')
+			this.model = new MultipleSelect.Model('', '')
 		}
 		if (this.menuModel == null || this.menuModel == undefined) {
 			this.menuModel = new MultipleSelect.MenuModel()
@@ -118,11 +118,10 @@ struct MultipleSelect {
 				.maxLines(2)
 				.textOverflow({ overflow: TextOverflow.Ellipsis })
 			Flex({ justifyContent: FlexAlign.End, alignItems: ItemAlign.Center }) {
-				Image('../resources/dropdown.png')
+				Image(this.model.getDropdownIcon())
 					.height('8vp')
 					.width('16vp')
 					.objectFit(ImageFit.Contain)
-					.opacity(0.5)
 			}
 			.height(this.model.getHeight())
 			.width(this.model.getWidth())
@@ -140,8 +139,8 @@ struct MultipleSelect {
 
 namespace MultipleSelect {
 	export class Model extends Properties {
-		constructor(title: string) {
-			super(title)
+		constructor(dropdownIcon: string | Resource, title: string) {
+			super(dropdownIcon, title)
 		}
 	}
 

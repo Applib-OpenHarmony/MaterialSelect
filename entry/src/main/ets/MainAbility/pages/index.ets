@@ -30,13 +30,13 @@ struct Index {
 	placeholder: string = 'select'
 	selectMenu: MenuOption[] = []
 	selection: MenuOption = new MenuOption(null, null)
-	selectModel: MaterialSelect.Model = new MaterialSelect.Model('Industry', 'sel')
+	selectModel: MaterialSelect.Model = new MaterialSelect.Model($r('app.media.dropdown'), 'Industry', 'sel')
 	selectMenuModel: MaterialSelect.MenuModel = new MaterialSelect.MenuModel()
 	multipleSelectName: string = 'Use Case'
 	multipleSelectMenu: MultipleMenuOption[] = []
-	multipleSelectModel: MultipleSelect.Model = new MultipleSelect.Model('Use Case')
+	multipleSelectModel: MultipleSelect.Model = new MultipleSelect.Model($r('app.media.dropdown'), 'Use Case')
 	multipleMenuModel: MultipleSelect.MenuModel = new MultipleSelect.MenuModel()
-	dotModel: DotMenu.Model = new DotMenu.Model()
+	dotModel: DotMenu.Model = new DotMenu.Model($r('app.media.dot_menu'))
 	dotMenuModel: DotMenu.MenuModel = new DotMenu.MenuModel()
 	dotMenu: DotMenuOption[] = [
 		new DotMenuOption('Download', 2, $r('app.media.download')),

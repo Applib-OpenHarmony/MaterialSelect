@@ -14,6 +14,7 @@
  */
 
 export class Properties {
+	private dropdownIcon: string | Resource = ''
 	private title: string = ""
 	private titleFontSize: number | string = '14vp'
 	private titleFontColor: string | Resource = '#333F48'
@@ -28,10 +29,25 @@ export class Properties {
 	private padding: Padding | Length = '10vp'
 	private margin: Margin | Length = '0vp'
 
-	constructor(title: string) {
+	constructor(dropdownIcon: string | Resource, title: string) {
+		if (dropdownIcon != null || dropdownIcon != undefined) {
+			this.dropdownIcon = dropdownIcon
+		}
 		if (title != null && title != undefined) {
 			this.title = title
 		}
+	}
+
+	setDropdownIcon(dropdownIcon: string | Resource): Properties {
+		if (dropdownIcon == null || dropdownIcon == undefined) {
+			dropdownIcon = ''
+		}
+		this.dropdownIcon = dropdownIcon
+		return this
+	}
+
+	getDropdownIcon(): string | Resource {
+		return this.dropdownIcon
 	}
 
 	setTitle(title: string): Properties {

@@ -20,12 +20,12 @@ import { DotMenuOption } from './menuOptions'
 struct DotMenu {
 	menu: DotMenuOption[] = []
 	onSelect: (it: DotMenuOption) => void
-	@State model: DotMenu.Model = new DotMenu.Model()
+	@State model: DotMenu.Model = new DotMenu.Model('')
 	@State menuModel: DotMenu.MenuModel = new DotMenu.MenuModel()
 
 	aboutToAppear() {
 		if (this.model == null || this.model == undefined) {
-			this.model = new DotMenu.Model()
+			this.model = new DotMenu.Model('')
 		}
 		if (this.menuModel == null || this.menuModel == undefined) {
 			this.menuModel = new DotMenu.MenuModel()
@@ -76,7 +76,7 @@ struct DotMenu {
 	}
 
 	build() {
-		Image('../resources/dot_menu.png')
+		Image(this.model.getIcon())
 			.height(this.model.getHeight())
 			.width(this.model.getWidth())
 			.objectFit(ImageFit.Contain)
@@ -88,10 +88,30 @@ struct DotMenu {
 
 namespace DotMenu {
 	export class Model {
+		private icon: string | Resource = ''
 		private height: number | string = '24vp'
 		private width: number | string = '24vp'
 		private backgroundColor: string | Color = Color.White
 		private margin: Margin | Length = '0vp'
+
+		constructor(icon: string | Resource) {
+			if (icon == null || icon == undefined) {
+				icon = ''
+			}
+			this.icon = icon
+		}
+
+		setIcon(icon: string | Resource): Model {
+			if (icon == null || icon == undefined) {
+				icon = ''
+			}
+			this.icon = icon
+			return this
+		}
+
+		getIcon(): string | Resource {
+			return this.icon
+		}
 
 		setHeight(height: number | string): Model {
 			if (height == null || height == undefined) {

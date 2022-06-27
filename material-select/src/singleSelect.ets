@@ -20,13 +20,13 @@ import { MenuOption } from './menuOptions'
 struct MaterialSelect {
 	menu: MenuOption[]
 	onSelect: (item: MenuOption) => void
-	@State model: MaterialSelect.Model = new MaterialSelect.Model('')
+	@State model: MaterialSelect.Model = new MaterialSelect.Model('', '')
 	@State menuModel: MaterialSelect.MenuModel = new MaterialSelect.MenuModel()
 	@State selected: number = -1
 
 	aboutToAppear() {
 		if (this.model == null || this.model == undefined) {
-			this.model = new MaterialSelect.Model('')
+			this.model = new MaterialSelect.Model('', '')
 		}
 		if (this.menuModel == null || this.menuModel == undefined) {
 			this.menuModel = new MaterialSelect.MenuModel()
@@ -98,7 +98,7 @@ struct MaterialSelect {
 					.fontColor(this.model.getFontColor())
 					.maxLines(1)
 					.textOverflow({ overflow: TextOverflow.Ellipsis })
-				Image('../resources/dropdown.png')
+				Image(this.model.getDropdownIcon())
 					.height('8vp')
 					.width('16vp')
 					.objectFit(ImageFit.Contain)
@@ -123,8 +123,8 @@ namespace MaterialSelect {
 		private fontSize: number | string = '18vp'
 		private fontColor: string | Color = '#333F48'
 
-		constructor(title: string, placeholder?: string) {
-			super(title)
+		constructor(dropdownIcon: string | Resource, title: string, placeholder?: string) {
+			super(dropdownIcon, title)
 			if (placeholder != null && placeholder != undefined) {
 				this.placeholder = placeholder
 			}

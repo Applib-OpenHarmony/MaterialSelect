@@ -28,11 +28,11 @@ import { DotMenu, DotMenuOption } from '@ohos/material-select'
 2. Initialize select model data
 
 ```
-private singleSelectModel:MaterialSelect.Model = new MaterialSelect.Model('Title', 'Placeholder')
+private singleSelectModel:MaterialSelect.Model = new MaterialSelect.Model($r('app.media.dropdown'), 'Title', 'Placeholder')
 
-private multipleSelectModel: MultipleSelect.Model = new MultipleSelect.Model('Title')
+private multipleSelectModel: MultipleSelect.Model = new MultipleSelect.Model($r('app.media.dropdown'), 'Title')
 
-private dotModel: DotMenu.Model = new DotMenu.Model()
+private dotModel: DotMenu.Model = new DotMenu.Model($r('app.media.dot_menu'))
 ```
 
 3. Initialize select menu model data
