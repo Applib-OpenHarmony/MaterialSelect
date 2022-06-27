@@ -74,12 +74,12 @@ struct MaterialSelect {
 		}
 		.width(this.menuModel.getWidth())
 		.backgroundColor(this.model.getUnselectedColor())
-		.padding({ top: 7, bottom: 7 })
+		.padding({ top: '7vp', bottom: '7vp' })
 		.borderRadius(this.menuModel.getBorderRadius())
 	}
 
 	build() {
-		Column({ space: 10 }) {
+		Column({ space: '10vp' }) {
 			Text(this.model.getTitle())
 				.width(this.model.getWidth())
 				.fontSize(this.model.getTitleFontSize())
@@ -98,9 +98,9 @@ struct MaterialSelect {
 					.fontColor(this.model.getFontColor())
 					.maxLines(1)
 					.textOverflow({ overflow: TextOverflow.Ellipsis })
-				Image($r('app.media.dropdown'))
-					.height(8)
-					.width(16)
+				Image('../resources/dropdown.png')
+					.height('8vp')
+					.width('16vp')
 					.objectFit(ImageFit.Contain)
 			}
 			.width(this.model.getWidth())
@@ -120,7 +120,7 @@ struct MaterialSelect {
 namespace MaterialSelect {
 	export class Model extends Properties {
 		private placeholder: string = 'Select'
-		private fontSize: number | string = 18
+		private fontSize: number | string = '18vp'
 		private fontColor: string | Color = '#333F48'
 
 		constructor(title: string, placeholder?: string) {
@@ -145,7 +145,7 @@ namespace MaterialSelect {
 
 		setFontSize(fontSize: number | string): Model {
 			if (fontSize == null || fontSize == undefined) {
-				this.fontSize = 18
+				this.fontSize = '18vp'
 				return this
 			}
 			this.fontSize = fontSize

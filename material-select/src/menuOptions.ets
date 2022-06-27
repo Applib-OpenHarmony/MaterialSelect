@@ -53,45 +53,12 @@ class MenuOption {
 	}
 }
 
-class MultipleMenuOption {
-	private value: string
-	private id: number | string
+class MultipleMenuOption extends MenuOption {
 	private checked: boolean = false
 
 	constructor(value: string, id: number | string, checked?: boolean) {
-		if (value == null || value == undefined) {
-			value = ''
-		}
-		if (id == null || id == undefined) {
-			id = -1
-		}
-		this.value = value
-		this.id = id
+		super(value, id)
 		if (checked != null && checked != undefined) this.checked = Boolean(checked)
-	}
-
-	setValue(value: string): MultipleMenuOption {
-		if (value == null || value == undefined) {
-			value = ''
-		}
-		this.value = value
-		return this
-	}
-
-	getValue(): string {
-		return this.value
-	}
-
-	setId(id: number | string): MultipleMenuOption {
-		if (id == null || id == undefined) {
-			id = -1
-		}
-		this.id = id
-		return this
-	}
-
-	getId(): number | string {
-		return this.id
 	}
 
 	setChecked(checked: boolean): MultipleMenuOption {
@@ -107,45 +74,12 @@ class MultipleMenuOption {
 	}
 }
 
-class DotMenuOption {
-	private value: string
-	private id: number | string
+class DotMenuOption extends MenuOption {
 	private icon?: string | Resource
 
 	constructor(value: string, id: number | string, icon?: string | Resource) {
-		if (value == null || value == undefined) {
-			value = ''
-		}
-		if (id == null || id == undefined) {
-			id = -1
-		}
-		this.value = value
-		this.id = id
+		super(value, id)
 		if (icon != null && icon != undefined) this.icon = icon
-	}
-
-	setValue(value: string): DotMenuOption {
-		if (value == null || value == undefined) {
-			value = ''
-		}
-		this.value = value
-		return this
-	}
-
-	getValue(): string {
-		return this.value
-	}
-
-	setId(id: number | string): DotMenuOption {
-		if (id == null || id == undefined) {
-			id = -1
-		}
-		this.id = id
-		return this
-	}
-
-	getId(): number | string {
-		return this.id
 	}
 
 	setIcon(icon: string | Resource) {

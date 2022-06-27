@@ -42,7 +42,7 @@ struct DotMenu {
 				.objectFit(ImageFit.Contain)
 				.width(this.menuModel.getIconWidth())
 				.height(this.menuModel.getIconHeight())
-				.margin({right: 12})
+				.margin({ right: '12vp' })
 			Text(option.getValue())
 				.fontSize(this.menuModel.getFontSize())
 				.fontColor(this.menuModel.getFontColor())
@@ -71,12 +71,12 @@ struct DotMenu {
 			}
 		}
 		.width(this.menuModel.getWidth())
-		.padding({ top: 7, bottom: 7 })
+		.padding({ top: '7vp', bottom: '7vp' })
 		.borderRadius(this.menuModel.getBorderRadius())
 	}
 
 	build() {
-		Image($r('app.media.dot_menu'))
+		Image('../resources/dot_menu.png')
 			.height(this.model.getHeight())
 			.width(this.model.getWidth())
 			.objectFit(ImageFit.Contain)
@@ -88,14 +88,14 @@ struct DotMenu {
 
 namespace DotMenu {
 	export class Model {
-		private height: number | string = 24
-		private width: number | string = 24
+		private height: number | string = '24vp'
+		private width: number | string = '24vp'
 		private backgroundColor: string | Color = Color.White
-		private margin: Margin | Length = 0
+		private margin: Margin | Length = '0vp'
 
 		setHeight(height: number | string): Model {
 			if (height == null || height == undefined) {
-				this.height = 24
+				this.height = '24vp'
 				return this
 			}
 			this.height = height
@@ -108,7 +108,7 @@ namespace DotMenu {
 
 		setWidth(width: number | string): Model {
 			if (width == null || width == undefined) {
-				this.width = 24
+				this.width = '24vp'
 				return this
 			}
 			this.width = width
@@ -134,7 +134,7 @@ namespace DotMenu {
 
 		setMargin(margin: Margin | Length): Model {
 			if (margin == null || margin == undefined) {
-				this.margin = 0
+				this.margin = '0vp'
 				return this
 			}
 			this.margin = margin
@@ -147,12 +147,12 @@ namespace DotMenu {
 	}
 
 	export class MenuModel extends MenuProperties {
-		private iconHeight: number | string = 18
-		private iconWidth: number | string = 18
+		private iconHeight: number | string = '18vp'
+		private iconWidth: number | string = '18vp'
 
 		setIconHeight(iconHeight: number | string): MenuModel {
 			if (iconHeight == null || iconHeight == undefined) {
-				this.iconHeight = 18
+				this.iconHeight = '18vp'
 				return this
 			}
 			this.iconHeight = iconHeight
@@ -165,7 +165,7 @@ namespace DotMenu {
 
 		setIconWidth(iconWidth: number | string): MenuModel {
 			if (iconWidth == null || iconWidth == undefined) {
-				this.iconWidth = 18
+				this.iconWidth = '18vp'
 				return this
 			}
 			this.iconWidth = iconWidth

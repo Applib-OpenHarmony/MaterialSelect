@@ -22,6 +22,7 @@ import {
 	DotMenuOption
 } from '@ohos/material-select'
 
+
 @Entry
 @Component
 struct Index {
@@ -31,12 +32,10 @@ struct Index {
 	selection: MenuOption = new MenuOption(null, null)
 	selectModel: MaterialSelect.Model = new MaterialSelect.Model('Industry', 'sel')
 	selectMenuModel: MaterialSelect.MenuModel = new MaterialSelect.MenuModel()
-
 	multipleSelectName: string = 'Use Case'
 	multipleSelectMenu: MultipleMenuOption[] = []
 	multipleSelectModel: MultipleSelect.Model = new MultipleSelect.Model('Use Case')
 	multipleMenuModel: MultipleSelect.MenuModel = new MultipleSelect.MenuModel()
-
 	dotModel: DotMenu.Model = new DotMenu.Model()
 	dotMenuModel: DotMenu.MenuModel = new DotMenu.MenuModel()
 	dotMenu: DotMenuOption[] = [
@@ -153,8 +152,8 @@ struct Index {
 
 	build() {
 		Column() {
-			Column({ space: 10 }) {
-				Row({ space: 10 }) {
+			Column({ space: '10vp' }) {
+				Row({ space: '10vp' }) {
 					MaterialSelect({
 						menu: this.selectMenu,
 						onSelect: (it: MenuOption) => {
@@ -175,10 +174,10 @@ struct Index {
 					})
 				}
 
-				Column({ space: 10 }) {
+				Column({ space: '10vp' }) {
 					Flex({ justifyContent: FlexAlign.SpaceBetween }) {
 						Text('File')
-							.fontSize(18)
+							.fontSize('18vp')
 							.fontWeight(FontWeight.Bold)
 						DotMenu({
 							menu: this.dotMenu,
@@ -191,21 +190,21 @@ struct Index {
 					}
 
 					Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris accumsan mi ligula. Sed mollis augue vel dolor hendrerit maximus. Vestibulum mollis euismod ornare. Curabitur eleifend pretium fermentum. Donec eget ipsum sed felis ultricies iaculis in et dolor. Phasellus in velit efficitur, fermentum ante sed, volutpat sem. In tempus lobortis lacinia. Proin a tincidunt justo.')
-						.fontSize(14)
+						.fontSize('14vp')
 						.fontColor('#9CA2C7')
 						.maxLines(2)
 						.textOverflow({ overflow: TextOverflow.Ellipsis })
 				}
-				.width('80%')
-				.padding(5)
-				.borderWidth(1)
-				.borderRadius(4)
+				.width('200vp')
+				.padding('5vp')
+				.borderWidth('1vp')
+				.borderRadius('4vp')
 			}
-			.width('80%')
-			.margin({ left: 10, right: 10, top: 10, bottom: 10 })
+			.width('200vp')
+			.margin({ left: '10vp', right: '10vp', top: '10vp', bottom: '10vp' })
 
-			Column({ space: 10 }) {
-				Row({ space: 10 }) {
+			Column({ space: '10vp' }) {
+				Row({ space: '10vp' }) {
 					MaterialSelect({
 						menu: null,
 						onSelect: null,
@@ -220,10 +219,10 @@ struct Index {
 					})
 				}
 
-				Column({ space: 10 }) {
+				Column({ space: '10vp' }) {
 					Flex({ justifyContent: FlexAlign.SpaceBetween }) {
 						Text('File')
-							.fontSize(18)
+							.fontSize('18vp')
 							.fontWeight(FontWeight.Bold)
 						DotMenu({
 							menu: null,
@@ -234,21 +233,21 @@ struct Index {
 					}
 
 					Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris accumsan mi ligula. Sed mollis augue vel dolor hendrerit maximus. Vestibulum mollis euismod ornare. Curabitur eleifend pretium fermentum. Donec eget ipsum sed felis ultricies iaculis in et dolor. Phasellus in velit efficitur, fermentum ante sed, volutpat sem. In tempus lobortis lacinia. Proin a tincidunt justo.')
-						.fontSize(14)
+						.fontSize('14vp')
 						.fontColor('#9CA2C7')
 						.maxLines(2)
 						.textOverflow({ overflow: TextOverflow.Ellipsis })
 				}
-				.width('80%')
-				.padding(5)
-				.borderWidth(1)
-				.borderRadius(4)
+				.width('200vp')
+				.padding('5vp')
+				.borderWidth('1vp')
+				.borderRadius('4vp')
 			}
-			.width('80%')
-			.margin({ left: 10, right: 10, top: 10, bottom: 10 })
+			.width('200vp')
+			.margin({ left: '10vp', right: '10vp', top: '10vp', bottom: '10vp' })
 
-			Column({ space: 10 }) {
-				Row({ space: 10 }) {
+			Column({ space: '10vp' }) {
+				Row({ space: '10vp' }) {
 					MaterialSelect({
 						menu: [
 							new MenuOption('Option 1', 1),
@@ -275,10 +274,10 @@ struct Index {
 					})
 				}
 
-				Column({ space: 10 }) {
+				Column({ space: '10vp' }) {
 					Flex({ justifyContent: FlexAlign.SpaceBetween }) {
 						Text('File')
-							.fontSize(18)
+							.fontSize('18vp')
 							.fontWeight(FontWeight.Bold)
 						DotMenu({
 							menu: [
@@ -295,18 +294,18 @@ struct Index {
 					}
 
 					Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris accumsan mi ligula. Sed mollis augue vel dolor hendrerit maximus. Vestibulum mollis euismod ornare. Curabitur eleifend pretium fermentum. Donec eget ipsum sed felis ultricies iaculis in et dolor. Phasellus in velit efficitur, fermentum ante sed, volutpat sem. In tempus lobortis lacinia. Proin a tincidunt justo.')
-						.fontSize(14)
+						.fontSize('14vp')
 						.fontColor('#9CA2C7')
 						.maxLines(2)
 						.textOverflow({ overflow: TextOverflow.Ellipsis })
 				}
-				.width('80%')
-				.padding(5)
-				.borderWidth(1)
-				.borderRadius(4)
+				.width('200vp')
+				.padding('5vp')
+				.borderWidth('1vp')
+				.borderRadius('4vp')
 			}
-			.width('80%')
-			.margin({ left: 10, right: 10, top: 10, bottom: 10 })
+			.width('200vp')
+			.margin({ left: '10vp', right: '10vp', top: '10vp', bottom: '10vp' })
 		}
 	}
 }

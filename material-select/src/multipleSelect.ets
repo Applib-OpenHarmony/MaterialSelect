@@ -72,7 +72,7 @@ struct MultipleSelect {
 					this.menu[index].setChecked(Boolean(val))
 					this.updateMenu()
 				})
-				.margin({right: 9})
+				.margin({ right: '9vp' })
 			Text(option.getValue())
 				.fontSize(this.menuModel.getFontSize())
 				.fontWeight(FontWeight.Bold)
@@ -104,12 +104,12 @@ struct MultipleSelect {
 		}
 		.width(this.menuModel.getWidth())
 		.backgroundColor(this.model.getUnselectedColor())
-		.padding({ top: 7, bottom: 7 })
+		.padding({ top: '7vp', bottom: '7vp' })
 		.borderRadius(this.menuModel.getBorderRadius())
 	}
 
 	build() {
-		Column({ space: 10 }) {
+		Column({ space: '10vp' }) {
 			Text(this.model.getTitle())
 				.width(this.model.getWidth())
 				.fontSize(this.model.getTitleFontSize())
@@ -118,9 +118,9 @@ struct MultipleSelect {
 				.maxLines(2)
 				.textOverflow({ overflow: TextOverflow.Ellipsis })
 			Flex({ justifyContent: FlexAlign.End, alignItems: ItemAlign.Center }) {
-				Image($r('app.media.dropdown'))
-					.height(8)
-					.width(16)
+				Image('../resources/dropdown.png')
+					.height('8vp')
+					.width('16vp')
 					.objectFit(ImageFit.Contain)
 					.opacity(0.5)
 			}
@@ -147,8 +147,8 @@ namespace MultipleSelect {
 
 	export class MenuModel extends MenuProperties {
 		private checkColor: string | Color = Color.Blue
-		private checkBoxHeight: number | string = 24
-		private checkBoxWidth: number | string = 24
+		private checkBoxHeight: number | string = '24vp'
+		private checkBoxWidth: number | string = '24vp'
 
 		setCheckColor(checkColor: string | Color): MenuModel {
 			if (checkColor == null || checkColor == undefined) {
@@ -165,7 +165,7 @@ namespace MultipleSelect {
 
 		setCheckBoxHeight(checkBoxHeight: number | string): MenuModel {
 			if (checkBoxHeight == null || checkBoxHeight == undefined) {
-				this.checkBoxHeight = 24
+				this.checkBoxHeight = '24vp'
 				return this
 			}
 			this.checkBoxHeight = checkBoxHeight
@@ -178,7 +178,7 @@ namespace MultipleSelect {
 
 		setCheckBoxWidth(checkBoxWidth: number | string): MenuModel {
 			if (checkBoxWidth == null || checkBoxWidth == undefined) {
-				this.checkBoxWidth = 24
+				this.checkBoxWidth = '24vp'
 				return this
 			}
 			this.checkBoxHeight = checkBoxWidth

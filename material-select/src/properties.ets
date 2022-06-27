@@ -15,18 +15,18 @@
 
 export class Properties {
 	private title: string = ""
-	private titleFontSize: number | string = 14
+	private titleFontSize: number | string = '14vp'
 	private titleFontColor: string | Resource = '#333F48'
-	private height: number | string = 60
-	private width: number | string = 100
+	private height: number | string = '60vp'
+	private width: number | string = '100vp'
 	private backgroundColor: string | Color = Color.White
-	private borderWidth: number | string = 1
-	private borderRadius: number | string = 4
+	private borderWidth: number | string = '1vp'
+	private borderRadius: number | string = '4vp'
 	private borderColor: string | Color = '#9CA2C7'
 	private unselectedColor: string | Color = Color.White
 	private selectedColor: string | Color = '#F0F3FF'
-	private padding: Padding | Length = 10
-	private margin: Margin | Length = 0
+	private padding: Padding | Length = '10vp'
+	private margin: Margin | Length = '0vp'
 
 	constructor(title: string) {
 		if (title != null && title != undefined) {
@@ -49,7 +49,7 @@ export class Properties {
 
 	setTitleFontSize(titleFontSize: number | string): Properties {
 		if (titleFontSize == null || titleFontSize == undefined) {
-			this.titleFontSize = 14
+			this.titleFontSize = '14vp'
 			return this
 		}
 		this.titleFontSize = titleFontSize
@@ -75,7 +75,7 @@ export class Properties {
 
 	setHeight(height: number | string): Properties {
 		if (height == null || height == undefined) {
-			this.height = 60
+			this.height = '60vp'
 			return this
 		}
 		this.height = height
@@ -88,7 +88,7 @@ export class Properties {
 
 	setWidth(width: number | string): Properties {
 		if (width == null || width == undefined) {
-			this.width = 120
+			this.width = '120vp'
 			return this
 		}
 		this.width = width
@@ -114,7 +114,7 @@ export class Properties {
 
 	setBorderWidth(borderWidth: number | string): Properties {
 		if (borderWidth == null || borderWidth == undefined) {
-			this.borderWidth = 1
+			this.borderWidth = '1vp'
 			return this
 		}
 		this.borderWidth = borderWidth
@@ -127,7 +127,7 @@ export class Properties {
 
 	setBorderRadius(borderRadius: number | string): Properties {
 		if (borderRadius == null || borderRadius == undefined) {
-			this.borderRadius = 4
+			this.borderRadius = '4vp'
 			return this
 		}
 		this.borderRadius = borderRadius
@@ -179,7 +179,7 @@ export class Properties {
 
 	setPadding(padding: Margin | Length): Properties {
 		if (padding == null || padding == undefined) {
-			this.padding = 0
+			this.padding = '0vp'
 			return this
 		}
 		this.padding = padding
@@ -192,7 +192,7 @@ export class Properties {
 
 	setMargin(margin: Margin | Length): Properties {
 		if (margin == null || margin == undefined) {
-			this.margin = 0
+			this.margin = '0vp'
 			return this
 		}
 		this.margin = margin
@@ -207,10 +207,10 @@ export class Properties {
 export class MenuProperties {
 	private height: number = 40
 	private width: number = 150
-	private fontSize: number | string = 14
+	private fontSize: number | string = '14vp'
 	private fontColor: string | Color = '#333F48'
-	private borderRadius: number | string = 0
-	private padding: Padding | Length = 10
+	private borderRadius: number | string = '0vp'
+	private padding: Padding | Length = '10vp'
 
 	setHeight(height: number): MenuProperties {
 		if (height == null || height == undefined) {
@@ -256,7 +256,7 @@ export class MenuProperties {
 
 	setFontSize(fontSize: number | string): MenuProperties {
 		if (fontSize == null || fontSize == undefined) {
-			this.fontSize = 14
+			this.fontSize = '14vp'
 			return this
 		}
 		this.fontSize = fontSize
@@ -282,7 +282,7 @@ export class MenuProperties {
 
 	setBorderRadius(borderRadius: number | string): MenuProperties {
 		if (borderRadius == null || borderRadius == undefined) {
-			this.borderRadius = 0
+			this.borderRadius = '0vp'
 			return this
 		}
 		this.borderRadius = borderRadius
@@ -295,7 +295,7 @@ export class MenuProperties {
 
 	setPadding(padding: Margin | Length): MenuProperties {
 		if (padding == null || padding == undefined) {
-			this.padding = 0
+			this.padding = '0vp'
 			return this
 		}
 		this.padding = padding
