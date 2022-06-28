@@ -98,7 +98,7 @@ struct MaterialSelect {
 					.fontColor(this.model.getFontColor())
 					.maxLines(1)
 					.textOverflow({ overflow: TextOverflow.Ellipsis })
-				Image(this.model.getDropdownIcon())
+				Image('../resources/dropdown.png')
 					.height('8vp')
 					.width('16vp')
 					.objectFit(ImageFit.Contain)
@@ -123,8 +123,8 @@ namespace MaterialSelect {
 		private fontSize: number | string = '18vp'
 		private fontColor: string | Color = '#333F48'
 
-		constructor(dropdownIcon: string | Resource, title: string, placeholder?: string) {
-			super(dropdownIcon, title)
+		constructor(title: string, placeholder?: string) {
+			super(title)
 			if (placeholder != null && placeholder != undefined) {
 				this.placeholder = placeholder
 			}
@@ -167,6 +167,14 @@ namespace MaterialSelect {
 
 		getFontColor(): string | Color {
 			return this.fontColor
+		}
+
+		reset(): Model {
+			super.reset()
+			this.placeholder = ''
+			this.fontSize = '18vp'
+			this.fontColor = '#333F48'
+			return this
 		}
 	}
 

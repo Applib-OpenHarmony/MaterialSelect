@@ -21,7 +21,7 @@ struct MultipleSelect {
 	@State menu: MultipleMenuOption[] = []
 	private selected: MultipleMenuOption[] = []
 	onSelect: (itemList: MultipleMenuOption[]) => void
-	@State model: MultipleSelect.Model = new MultipleSelect.Model('', '')
+	@State model: MultipleSelect.Model = new MultipleSelect.Model('')
 	@State menuModel: MultipleSelect.MenuModel = new MultipleSelect.MenuModel()
 
 	private updateMenu() {
@@ -41,7 +41,7 @@ struct MultipleSelect {
 
 	aboutToAppear() {
 		if (this.model == null || this.model == undefined) {
-			this.model = new MultipleSelect.Model('', '')
+			this.model = new MultipleSelect.Model('')
 		}
 		if (this.menuModel == null || this.menuModel == undefined) {
 			this.menuModel = new MultipleSelect.MenuModel()
@@ -118,7 +118,7 @@ struct MultipleSelect {
 				.maxLines(2)
 				.textOverflow({ overflow: TextOverflow.Ellipsis })
 			Flex({ justifyContent: FlexAlign.End, alignItems: ItemAlign.Center }) {
-				Image(this.model.getDropdownIcon())
+				Image('../resources/dropdown.png')
 					.height('8vp')
 					.width('16vp')
 					.objectFit(ImageFit.Contain)
@@ -139,8 +139,8 @@ struct MultipleSelect {
 
 namespace MultipleSelect {
 	export class Model extends Properties {
-		constructor(dropdownIcon: string | Resource, title: string) {
-			super(dropdownIcon, title)
+		constructor(title: string) {
+			super(title)
 		}
 	}
 
@@ -186,6 +186,14 @@ namespace MultipleSelect {
 
 		getCheckBoxWidth(): number | string {
 			return this.checkBoxWidth
+		}
+
+		reset(): MenuModel {
+			super.reset()
+			this.checkColor = Color.Blue
+			this.checkBoxHeight = '24vp'
+			this.checkBoxWidth = '24vp'
+			return this
 		}
 	}
 }

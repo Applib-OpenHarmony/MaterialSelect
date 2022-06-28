@@ -30,13 +30,13 @@ struct Index {
 	placeholder: string = 'select'
 	selectMenu: MenuOption[] = []
 	selection: MenuOption = new MenuOption(null, null)
-	selectModel: MaterialSelect.Model = new MaterialSelect.Model($r('app.media.dropdown'), 'Industry', 'sel')
+	selectModel: MaterialSelect.Model = new MaterialSelect.Model('Industry', 'sel')
 	selectMenuModel: MaterialSelect.MenuModel = new MaterialSelect.MenuModel()
 	multipleSelectName: string = 'Use Case'
 	multipleSelectMenu: MultipleMenuOption[] = []
-	multipleSelectModel: MultipleSelect.Model = new MultipleSelect.Model($r('app.media.dropdown'), 'Use Case')
+	multipleSelectModel: MultipleSelect.Model = new MultipleSelect.Model('Use Case')
 	multipleMenuModel: MultipleSelect.MenuModel = new MultipleSelect.MenuModel()
-	dotModel: DotMenu.Model = new DotMenu.Model($r('app.media.dot_menu'))
+	dotModel: DotMenu.Model = new DotMenu.Model()
 	dotMenuModel: DotMenu.MenuModel = new DotMenu.MenuModel()
 	dotMenu: DotMenuOption[] = [
 		new DotMenuOption('Download', 2, $r('app.media.download')),
@@ -148,10 +148,18 @@ struct Index {
 		this.multipleSelectMenu.push(new MultipleMenuOption(null, 11, null))
 		this.multipleSelectMenu.push(new MultipleMenuOption(null, null, false))
 		this.multipleSelectMenu.push(new MultipleMenuOption(null, null, true))
+
+		this.multipleSelectModel.reset()
+		this.multipleMenuModel.reset()
+		this.selectModel.reset()
+		this.selectMenuModel.reset()
+		this.dotModel.reset()
+		this.dotMenuModel.reset()
 	}
 
 	build() {
 		Column() {
+			Image('../../../../../../material-select/resources/dot_menu.png').height('100vp').width('100vp').alt($r("app.media.icon"))
 			Column({ space: '10vp' }) {
 				Row({ space: '10vp' }) {
 					MaterialSelect({

@@ -14,7 +14,6 @@
  */
 
 export class Properties {
-	private dropdownIcon: string | Resource = ''
 	private title: string = ""
 	private titleFontSize: number | string = '14vp'
 	private titleFontColor: string | Resource = '#333F48'
@@ -26,28 +25,13 @@ export class Properties {
 	private borderColor: string | Color = '#9CA2C7'
 	private unselectedColor: string | Color = Color.White
 	private selectedColor: string | Color = '#F0F3FF'
-	private padding: Padding | Length = '10vp'
+	private padding: Padding | Length = '0vp'
 	private margin: Margin | Length = '0vp'
 
-	constructor(dropdownIcon: string | Resource, title: string) {
-		if (dropdownIcon != null || dropdownIcon != undefined) {
-			this.dropdownIcon = dropdownIcon
-		}
+	constructor(title: string) {
 		if (title != null && title != undefined) {
 			this.title = title
 		}
-	}
-
-	setDropdownIcon(dropdownIcon: string | Resource): Properties {
-		if (dropdownIcon == null || dropdownIcon == undefined) {
-			dropdownIcon = ''
-		}
-		this.dropdownIcon = dropdownIcon
-		return this
-	}
-
-	getDropdownIcon(): string | Resource {
-		return this.dropdownIcon
 	}
 
 	setTitle(title: string): Properties {
@@ -218,6 +202,22 @@ export class Properties {
 	getMargin(): Margin | Length {
 		return this.margin
 	}
+
+	reset(): Properties {
+		this.title = ''
+		this.titleFontSize = '14vp'
+		this.titleFontColor = '#333F48'
+		this.height = '60vp'
+		this.width = '120vp'
+		this.backgroundColor = Color.White
+		this.borderRadius = '4vp'
+		this.borderColor = '#9CA2C7'
+		this.unselectedColor = Color.White
+		this.selectedColor = '#F0F3FF'
+		this.padding = '0vp'
+		this.margin = '0vp'
+		return this
+	}
 }
 
 export class MenuProperties {
@@ -320,5 +320,14 @@ export class MenuProperties {
 
 	getPadding(): Padding | Length {
 		return this.padding
+	}
+
+	reset(): MenuProperties {
+		this.height = 40
+		this.width = 150
+		this.fontColor = '#333F48'
+		this.borderRadius = '0vp'
+		this.padding = '0vp'
+		return this
 	}
 }
