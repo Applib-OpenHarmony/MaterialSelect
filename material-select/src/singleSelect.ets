@@ -98,7 +98,7 @@ struct MaterialSelect {
 					.fontColor(this.model.getFontColor())
 					.maxLines(1)
 					.textOverflow({ overflow: TextOverflow.Ellipsis })
-				Image('../resources/dropdown.png')
+				Image($r('app.media.dropdown'))
 					.height('8vp')
 					.width('16vp')
 					.objectFit(ImageFit.Contain)

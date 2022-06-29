@@ -76,7 +76,7 @@ struct DotMenu {
 	}
 
 	build() {
-		Image('../resources/dot_menu.png')
+		Image($r('app.media.dot_menu'))
 			.height(this.model.getHeight())
 			.width(this.model.getWidth())
 			.objectFit(ImageFit.Contain)

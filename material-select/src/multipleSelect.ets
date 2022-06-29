@@ -118,7 +118,7 @@ struct MultipleSelect {
 				.maxLines(2)
 				.textOverflow({ overflow: TextOverflow.Ellipsis })
 			Flex({ justifyContent: FlexAlign.End, alignItems: ItemAlign.Center }) {
-				Image('../resources/dropdown.png')
+				Image($r('app.media.dropdown'))
 					.height('8vp')
 					.width('16vp')
 					.objectFit(ImageFit.Contain)

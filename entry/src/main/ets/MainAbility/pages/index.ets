@@ -66,9 +66,9 @@ struct Index {
 		this.selectModel.setFontSize(null)
 		this.selectModel.setMargin(null)
 
-		this.selectModel.setPlaceholder(null)
-		this.selectModel.setFontSize(null)
-		this.selectModel.setFontColor(null)
+		this.selectModel.setPlaceholder('sel')
+		this.selectModel.setFontSize('20vp')
+		this.selectModel.setFontColor(Color.Blue)
 
 		this.multipleSelectModel.setTitle(null)
 		this.multipleSelectModel.setTitleFontSize(null)
@@ -159,7 +159,6 @@ struct Index {
 
 	build() {
 		Column() {
-			Image('../../../../../../material-select/resources/dot_menu.png').height('100vp').width('100vp').alt($r("app.media.icon"))
 			Column({ space: '10vp' }) {
 				Row({ space: '10vp' }) {
 					MaterialSelect({
