@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-export { MaterialSelect, MenuOption } from './singleSelect'
+export { MaterialSelect, MenuOption } from './src/main/ets/components/singleSelect'
 
-export { MultipleSelect, MultipleMenuOption } from './multipleSelect'
+export { MultipleSelect, MultipleMenuOption } from './src/main/ets/components/multipleSelect'
 
-export { DotMenu, DotMenuOption } from './dotMenu'
+export { DotMenu, DotMenuOption } from './src/main/ets/components/dotMenu'

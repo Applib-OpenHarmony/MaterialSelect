@@ -1,27 +1,35 @@
 {
-  "app": {
-    "signingConfigs": [],
-    "compileSdkVersion": 8,
-    "compatibleSdkVersion": 8,
-    "products": [
-      {
-        "name": "default",
-        "signingConfig": "default",
-      }
-    ]
-  },
-  "modules": [
-    {
-      "name": "entry",
-      "srcPath": "./entry",
-      "targets": [
-        {
-          "name": "default",
-          "applyToProducts": [
-            "default"
-          ]
-        }
-      ]
-    }
-  ]
+	"app": {
+		"signingConfigs": [],
+		"compileSdkVersion": 8,
+		"compatibleSdkVersion": 8,
+		"products": [
+			{
+				"name": "default",
+				"signingConfig": "default",
+			}
+		]
+	},
+	"modules": [
+		{
+			"name": "entry",
+			"srcPath": "./entry",
+			"targets": [
+				{
+					"name": "default",
+					"applyToProducts": [
+						"default"
+					]
+				}
+			]
+		},
+		{
+			"name": "materialselect",
+			"srcPath": "./materialselect"
+		},
+		{
+			"name": "materialselect",
+			"srcPath": "./materialselect"
+		}
+	]
 }
